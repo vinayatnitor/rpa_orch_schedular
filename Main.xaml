@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1055,2296" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1055,2696" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
       <x:String>System.Activities</x:String>
@@ -48,7 +48,7 @@
       <AssemblyReference>UiPath.Database</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="1015,2216" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence sap:VirtualizedContainerService.HintSize="1015,2616" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:OrchestratorJob)" Name="all_jobs" />
       <Variable x:TypeArguments="s:String[]" Name="file_name_array" />
@@ -81,10 +81,10 @@
 "The claim wasn’t filed on time.",
 "The client gave incorrect information. ",
 "Please set-up an appointment with your provider for more information or further proceedings.",
-"Billing provider name and billing provider secondary identifucation does not matches"}]</InArgument>
+"Billing provider name and billing provider secondary identification does not matches"}]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[file_name_array.Count &gt; 0]" DisplayName="If - Will check if we have files in our folder for processing" sap:VirtualizedContainerService.HintSize="993,1789" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[file_name_array.Count &gt; 0]" DisplayName="If - Will check if we have files in our folder for processing" sap:VirtualizedContainerService.HintSize="993,2189" sap2010:WorkflowViewState.IdRef="If_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -92,13 +92,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="757,1641" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[file_name_array]">
+        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="757,2041" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[file_name_array]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="current_file_name" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="741,1507" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence sap:VirtualizedContainerService.HintSize="741,1907" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="sd:DataTable" Name="edi_file_data_table" />
                   <Variable x:TypeArguments="x:Int32" Name="record_count" />
@@ -108,13 +108,17 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="719,1383" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="719,1783" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="current_file_content" />
                     <Variable x:TypeArguments="s:String[]" Name="current_file_contents_array" />
                     <Variable x:TypeArguments="x:String" Name="REF_G2" />
                     <Variable x:TypeArguments="x:String" Name="NPI" />
                     <Variable x:TypeArguments="x:String" Name="variable1" />
+                    <Variable x:TypeArguments="x:String" Name="POLICY_NUMBER" />
+                    <Variable x:TypeArguments="x:String" Name="INSURER" />
+                    <Variable x:TypeArguments="x:String" Name="INSURER_FIRST_NAME" />
+                    <Variable x:TypeArguments="x:String" Name="INSURER_LAST_NAME" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -152,19 +156,59 @@
                       </InArgument>
                     </Assign.Value>
                   </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[POLICY_NUMBER]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[INSURER]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[INSURER_FIRST_NAME]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="Assign_17">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[INSURER_LAST_NAME]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
                   <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each - iterating through each line of data" sap:VirtualizedContainerService.HintSize="697,51" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[current_file_contents_array]">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="current_line" />
                         </ActivityAction.Argument>
-                        <Sequence sap:VirtualizedContainerService.HintSize="264,366" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence sap:VirtualizedContainerService.HintSize="486,1129" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <Assign sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Object">[current_line]</OutArgument>
                             </Assign.To>
@@ -172,7 +216,7 @@
                               <InArgument x:TypeArguments="x:Object">[current_line.ToString]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <If Condition="[current_line.ToString.Contains(&quot;NM1*85*2*BEN&quot;)]" DisplayName="If - finidng NPI string" sap:VirtualizedContainerService.HintSize="242,51" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If Condition="[current_line.ToString.Contains(&quot;NM1*85*2*BEN&quot;)]" DisplayName="If - finidng NPI string" sap:VirtualizedContainerService.HintSize="464,51" sap2010:WorkflowViewState.IdRef="If_2">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -216,7 +260,7 @@
                               </Sequence>
                             </If.Then>
                           </If>
-                          <If Condition="[current_line.ToString.Contains(&quot;REF*G2*&quot;)]" DisplayName="If-  finidng REF string" sap:VirtualizedContainerService.HintSize="242,51" sap2010:WorkflowViewState.IdRef="If_3">
+                          <If Condition="[current_line.ToString.Contains(&quot;REF*G2*&quot;)]" DisplayName="If-  finidng REF string" sap:VirtualizedContainerService.HintSize="464,51" sap2010:WorkflowViewState.IdRef="If_3">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -254,6 +298,83 @@
                                   </Assign.To>
                                   <Assign.Value>
                                     <InArgument x:TypeArguments="x:String">[Split (current_line.ToString, "*").Last]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </If.Then>
+                          </If>
+                          <If Condition="[current_line.ToString.Contains(&quot;NM1*IL*&quot;)]" DisplayName="If-  finidng policy number string" sap:VirtualizedContainerService.HintSize="464,51" sap2010:WorkflowViewState.IdRef="If_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="264,184" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[POLICY_NUMBER]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[Split (current_line.ToString, "*").Last]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </If.Then>
+                          </If>
+                          <If Condition="[current_line.ToString.Contains(&quot;NM1*IL*&quot;)]" DisplayName="If-  finidng INSURER name" sap:VirtualizedContainerService.HintSize="464,632" sap2010:WorkflowViewState.IdRef="If_6">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="264,484" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="s:String[]" Name="INSURER_NAME_ARRAY" />
+                                </Sequence.Variables>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="s:String[]">[INSURER_NAME_ARRAY]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="s:String[]">[Split (current_line.ToString, "*")]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[INSURER_FIRST_NAME]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[INSURER_NAME_ARRAY.GetValue(3).ToString]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[INSURER_LAST_NAME]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[INSURER_NAME_ARRAY.GetValue(4).ToString]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:String">[INSURER]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:String">[INSURER_FIRST_NAME + " " + INSURER_LAST_NAME]</InArgument>
                                   </Assign.Value>
                                 </Assign>
                               </Sequence>
@@ -304,7 +425,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:MoveFile ContinueOnError="{x:Null}" Destination="C:\Users\vinay.jadhav\Documents\UiPath\StartJobActivity\edi_file_data\unprocessed_claims" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="False" Path="[current_file_name.ToString]" />
-                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear &lt;&lt;Insurer&gt;&gt;, We regret that  your claim against the Policy &lt;&lt;Place holder&gt;&gt; for a policy got rejected. Below are the reason(s):       &quot; + messages.Last +&#xA;&quot;   Thanks,&lt;&lt;Name of your Bot&gt;&gt; &quot;]" DisplayName="Send SMTP Mail Message - Failure" Email="vinay@spotonsoft.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="314,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="vinay_123" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Claim validation unsuccessful with file  &quot; + Split(current_file_name.ToString,&quot;\&quot;).Last]" To="vinay.jadhav@nitorinfotech.com">
+                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Dear &quot;+INSURER+&quot;, We regret that  your claim against the Policy  with policy  number &quot;+POLICY_NUMBER+&quot; got rejected. Below are the reason(s):       &quot; + messages.Last +&#xD;&#xA;&quot;   Thanks,&lt;&lt;Name of your Bot&gt;&gt; &quot;]" DisplayName="Send SMTP Mail Message - Failure" Email="vinay@spotonsoft.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="314,145" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="vinay_123" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Claim validation unsuccessful with file  &quot; + Split(current_file_name.ToString,&quot;\&quot;).Last]" To="vinay.jadhav@nitorinfotech.com">
                           <ui:SendMail.Files>
                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                           </ui:SendMail.Files>
@@ -319,7 +440,7 @@
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:MoveFile ContinueOnError="{x:Null}" Destination="C:\Users\vinay.jadhav\Documents\UiPath\StartJobActivity\edi_file_data\processed_claims" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="MoveFile_3" Overwrite="False" Path="[current_file_name.ToString]" />
-                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot; Dear &lt;&lt;Insurer&gt;&gt;, We are happy to tell you that your insurance file, &quot;+Split(current_file_name.ToString, &quot;\&quot;).Last+&quot; has been sucessfully validated. Thanks,&lt;&lt;Name Of your Bot&gt;&gt; &quot;]" DisplayName="Send SMTP Mail Message - Success" Email="vinay@spotonsoft.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="314,145" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Password="vinay_123" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Claim validation successful with file - &quot; +  Split(current_file_name.ToString,&quot;\&quot;).Last]" To="vinay.jadhav@nitorinfotech.com">
+                        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot; Dear  &quot;+INSURER+&quot; , We are happy to tell you that your insurance file, &quot;+Split(current_file_name.ToString, &quot;\&quot;).Last+&quot; has been sucessfully validated. Thanks,&lt;&lt;Name Of your Bot&gt;&gt; &quot;]" DisplayName="Send SMTP Mail Message - Success" Email="vinay@spotonsoft.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="314,145" sap2010:WorkflowViewState.IdRef="SendMail_3" IsBodyHtml="False" Password="vinay_123" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="[&quot;Claim validation successful with file - &quot; +  Split(current_file_name.ToString,&quot;\&quot;).Last]" To="vinay.jadhav@nitorinfotech.com">
                           <ui:SendMail.Files>
                             <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
                           </ui:SendMail.Files>
