@@ -65,7 +65,7 @@
         <OutArgument x:TypeArguments="s:String[]">[file_name_array]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="s:String[]">[System.IO.Directory.GetFiles("C:\Users\vinay.jadhav\Documents\UiPath\StartJobActivity\edi_file_data")]</InArgument>
+        <InArgument x:TypeArguments="s:String[]">[System.IO.Directory.GetFiles(Directory.GetCurrentDirectory+"\edi_file_data")]</InArgument>
       </Assign.Value>
     </Assign>
     <ui:DatabaseConnect DatabaseConnection="[connection]" DisplayName="Connect" sap:VirtualizedContainerService.HintSize="993,59" sap2010:WorkflowViewState.IdRef="DatabaseConnect_1" ProviderName="System.Data.SqlClient" ConnectionString="Data Source=NIT-WKS-0086;Integrated Security=True" />
