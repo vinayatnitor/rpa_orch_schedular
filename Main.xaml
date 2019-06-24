@@ -97,13 +97,13 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <If.Then>
-        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="920,4453" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[file_name_array]">
+        <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="920,4455" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[file_name_array]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="x:Object" Name="current_file_name" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="904,4319" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence sap:VirtualizedContainerService.HintSize="904,4321" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="sd:DataTable" Name="edi_file_data_table" />
                   <Variable x:TypeArguments="x:Int32" Name="record_count" />
@@ -114,7 +114,7 @@
                     <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="882,4195" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="882,4197" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="current_file_content" />
                     <Variable x:TypeArguments="s:String[]" Name="current_file_contents_array" />
@@ -217,13 +217,13 @@
                       </InArgument>
                     </Assign.Value>
                   </Assign>
-                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each - iterating through each line of data" sap:VirtualizedContainerService.HintSize="860,2442" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[current_file_contents_array]">
+                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each - iterating through each line of data" sap:VirtualizedContainerService.HintSize="860,2444" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[current_file_contents_array]">
                     <ui:ForEach.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="x:Object" Name="current_line" />
                         </ActivityAction.Argument>
-                        <Sequence sap:VirtualizedContainerService.HintSize="844,2308" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence sap:VirtualizedContainerService.HintSize="844,2310" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="claims" />
                             <Variable x:TypeArguments="x:String" Name="variable2" />
@@ -407,7 +407,7 @@
                               </Sequence>
                             </If.Then>
                           </If>
-                          <If Condition="[current_line.ToString.Contains(&quot;DTP*472*D8*&quot;)]" DisplayName="If-  finidng claim number string" sap:VirtualizedContainerService.HintSize="822,1720" sap2010:WorkflowViewState.IdRef="If_8">
+                          <If Condition="[current_line.ToString.Contains(&quot;DTP*472*D8*&quot;)]" DisplayName="If-  finidng claim number string" sap:VirtualizedContainerService.HintSize="822,1722" sap2010:WorkflowViewState.IdRef="If_8">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -415,13 +415,13 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <If.Then>
-                              <Sequence sap:VirtualizedContainerService.HintSize="697,1572" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                              <Sequence sap:VirtualizedContainerService.HintSize="697,1574" sap2010:WorkflowViewState.IdRef="Sequence_18">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <Sequence sap:VirtualizedContainerService.HintSize="675,1448" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                <Sequence sap:VirtualizedContainerService.HintSize="675,1450" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="CLAIM_NUMBER" />
                                     <Variable x:TypeArguments="x:String" Name="timediff" />
@@ -559,12 +559,12 @@
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:CommentOut>
-                                  <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" sap:VirtualizedContainerService.HintSize="653,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" ProviderName="System.Data.SqlClient" Sql="SELECT * FROM [UiPath].[dbo].[policy]" ConnectionString="Data Source=localhost;Integrated Security=True">
+                                  <ui:ExecuteQuery ContinueOnError="{x:Null}" DataTable="{x:Null}" ExistingDbConnection="{x:Null}" TimeoutMS="{x:Null}" CommandType="Text" DisplayName="Execute Query" sap:VirtualizedContainerService.HintSize="653,88" sap2010:WorkflowViewState.IdRef="ExecuteQuery_2" ProviderName="System.Data.SqlClient" Sql="SELECT *  FROM [UiPath].[dbo].[policy]" ConnectionString="Data Source=localhost;Integrated Security=True">
                                     <ui:ExecuteQuery.Parameters>
                                       <scg:Dictionary x:TypeArguments="x:String, Argument" />
                                     </ui:ExecuteQuery.Parameters>
                                   </ui:ExecuteQuery>
-                                  <If Condition="[claim_within_days&lt; calculated_days]" sap:VirtualizedContainerService.HintSize="653,206" sap2010:WorkflowViewState.IdRef="If_10">
+                                  <If Condition="[claim_within_days&lt; calculated_days]" sap:VirtualizedContainerService.HintSize="653,208" sap2010:WorkflowViewState.IdRef="If_10">
                                     <If.Then>
                                       <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_9" Text="[&quot;Processing&quot;]" TopMost="True" />
                                     </If.Then>
