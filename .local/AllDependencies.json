@@ -121,6 +121,23 @@
           "lib/Interop.Domino.dll": {}
         }
       },
+      "jQuery/2.1.0": {
+        "type": "package"
+      },
+      "Microsoft.Activities/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/_._": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Activities.Design.Services.dll": {},
+          "lib/net45/Microsoft.Activities.Design.dll": {},
+          "lib/net45/Microsoft.Activities.dll": {},
+          "lib/net45/Microsoft.Workflow.Client.dll": {},
+          "lib/net45/Microsoft.Workflow.Common.dll": {},
+          "lib/net45/Microsoft.Workflow.Tracing.dll": {}
+        }
+      },
       "Microsoft.AspNet.SignalR.Client/2.4.0": {
         "type": "package",
         "dependencies": {
@@ -190,6 +207,12 @@
           "lib/net45/NPOI.OpenXml4Net.dll": {},
           "lib/net45/NPOI.OpenXmlFormats.dll": {},
           "lib/net45/NPOI.dll": {}
+        }
+      },
+      "RaiseWindow/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "2.1.0"
         }
       },
       "SharpZipLib/1.0.0": {
@@ -609,6 +632,45 @@
         "lib/Interop.Domino.dll"
       ]
     },
+    "jQuery/2.1.0": {
+      "sha512": "xMauIG19FNgANvxF2jmt+PVOc/nATzqK8FbsDvvsJL1Hp9Mhl1pL80fPGok/Cmz+Mhph7RaH9wXtERjsxGggCQ==",
+      "type": "package",
+      "path": "jquery/2.1.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Content/Scripts/jquery-2.1.0-vsdoc.js",
+        "Content/Scripts/jquery-2.1.0.js",
+        "Content/Scripts/jquery-2.1.0.min.js",
+        "Content/Scripts/jquery-2.1.0.min.map",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-2.1.0.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.2.1.0.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
+    "Microsoft.Activities/1.0.1": {
+      "sha512": "jkwJR/MMdyLol9wkIXkbpcCu8AUAJte7UZM6IcoeOnrX8cNgHppt6IawNfkhGqQs6ulTklBuZ2DjLj1/154iUA==",
+      "type": "package",
+      "path": "microsoft.activities/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net45/Microsoft.Activities.Design.Services.dll",
+        "lib/net45/Microsoft.Activities.Design.dll",
+        "lib/net45/Microsoft.Activities.Design.xml",
+        "lib/net45/Microsoft.Activities.dll",
+        "lib/net45/Microsoft.Activities.xml",
+        "lib/net45/Microsoft.Workflow.Client.dll",
+        "lib/net45/Microsoft.Workflow.Client.xml",
+        "lib/net45/Microsoft.Workflow.Common.dll",
+        "lib/net45/Microsoft.Workflow.Tracing.dll",
+        "microsoft.activities.1.0.1.nupkg.sha512",
+        "microsoft.activities.nuspec"
+      ]
+    },
     "Microsoft.AspNet.SignalR.Client/2.4.0": {
       "sha512": "xGoQq9dEsBU49U1Whl0To2JyRQePmo8ayYS8VNruLlQaX+fQBzYyLJeMlW9r7mlt8Vc9JP+083m9pKrfYpdDbg==",
       "type": "package",
@@ -740,6 +802,21 @@
         "logo/60_60.jpg",
         "npoi.2.4.1.nupkg.sha512",
         "npoi.nuspec"
+      ]
+    },
+    "RaiseWindow/1.0.1": {
+      "sha512": "A2fcTO0qsipKaRmfhq6zf+uw0Tdfjl7cRhfWDWpjFFkIeAXPreJkp8kdoDlg3Q96p7SFnnxeJOI0Cir3nWeivg==",
+      "type": "package",
+      "path": "raisewindow/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/PopupImages/exclamation-button.png",
+        "content/PopupImages/mail--arrow.png",
+        "content/Scripts/PopupManager.js",
+        "content/Scripts/PopupManager.min.js",
+        "raisewindow.1.0.1.nupkg.sha512",
+        "raisewindow.nuspec"
       ]
     },
     "SharpZipLib/1.0.0": {
@@ -1068,6 +1145,8 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
+      "Microsoft.Activities >= 1.0.1 <= 1.0.1",
+      "RaiseWindow >= 1.0.1 <= 1.0.1",
       "UiPath.Database.Activities >= 1.2.6863.32528 <= 1.2.6863.32528",
       "UiPath.Excel.Activities >= 2.6.0 <= 2.6.0",
       "UiPath.Mail.Activities >= 1.5.0 <= 1.5.0",
@@ -1089,6 +1168,16 @@
     "frameworks": {
       "net461": {
         "dependencies": {
+          "Microsoft.Activities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.1, 1.0.1]"
+          },
+          "RaiseWindow": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.0.1, 1.0.1]"
+          },
           "UiPath.Database.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -1117,5 +1206,21 @@
         }
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU3034",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RaiseWindow 1.0.1' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
+      "libraryId": "RaiseWindow"
+    },
+    {
+      "code": "NU3034",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'jQuery 2.1.0' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
+      "libraryId": "jQuery"
+    }
+  ]
 }

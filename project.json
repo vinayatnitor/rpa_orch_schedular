@@ -3,6 +3,8 @@
   "description": "Start Job activity",
   "main": "Main.xaml",
   "dependencies": {
+    "Microsoft.Activities": "[1.0.1]",
+    "RaiseWindow": "[1.0.1]",
     "UiPath.Database.Activities": "[1.2.6863.32528]",
     "UiPath.Excel.Activities": "[2.6.0]",
     "UiPath.Mail.Activities": "[1.5.0]",
