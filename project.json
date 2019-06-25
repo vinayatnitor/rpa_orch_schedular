@@ -3,8 +3,10 @@
   "description": "Start Job activity",
   "main": "Main.xaml",
   "dependencies": {
+    "ExceltoPDFConversionActivities": "[1.1.6]",
     "Microsoft.Activities": "[1.0.1]",
     "RaiseWindow": "[1.0.1]",
+    "sautinsoft.exceltopdf": "[5.1.5.22]",
     "UiPath.Database.Activities": "[1.2.6863.32528]",
     "UiPath.Excel.Activities": "[2.6.0]",
     "UiPath.Mail.Activities": "[1.5.0]",

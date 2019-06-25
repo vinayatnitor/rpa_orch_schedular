@@ -50,6 +50,15 @@
           "lib/DocumentFormat.OpenXml.dll": {}
         }
       },
+      "ExceltoPDFConversionActivities/1.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/_._": {}
+        },
+        "runtime": {
+          "lib/ExceltoPDFConversion.dll": {}
+        }
+      },
       "Extended.Wpf.Toolkit/2.8.0": {
         "type": "package",
         "frameworkAssemblies": [
@@ -213,6 +222,15 @@
         "type": "package",
         "dependencies": {
           "jQuery": "2.1.0"
+        }
+      },
+      "sautinsoft.exceltopdf/5.1.5.22": {
+        "type": "package",
+        "compile": {
+          "lib/net461/_._": {}
+        },
+        "runtime": {
+          "lib/net461/SautinSoft.ExcelToPdf.dll": {}
         }
       },
       "SharpZipLib/1.0.0": {
@@ -575,6 +593,18 @@
         "lib/DocumentFormat.OpenXml.dll"
       ]
     },
+    "ExceltoPDFConversionActivities/1.1.6": {
+      "sha512": "1/4+KkaB3ebkBVVPA8oxjLevIVvnU0YjuPCi/2mIowYTK2+hgJCXaHphoKNTjkDlEmYYS8CqEkO+VoNwkNBYfg==",
+      "type": "package",
+      "path": "exceltopdfconversionactivities/1.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "exceltopdfconversionactivities.1.1.6.nupkg.sha512",
+        "exceltopdfconversionactivities.nuspec",
+        "lib/ExceltoPDFConversion.dll"
+      ]
+    },
     "Extended.Wpf.Toolkit/2.8.0": {
       "sha512": "wKjJl4sDyXTVzgiKTBTw8jT0/3OwpEklQuWGe1Nz2HX0joiBeUzIurY2mnERni+8XHwateRcuks6yk/cuR22fA==",
       "type": "package",
@@ -817,6 +847,26 @@
         "content/Scripts/PopupManager.min.js",
         "raisewindow.1.0.1.nupkg.sha512",
         "raisewindow.nuspec"
+      ]
+    },
+    "sautinsoft.exceltopdf/5.1.5.22": {
+      "sha512": "rWgtt2WSy0chFUHF33H7Qa+6gICZSocHnrY3zyuOBlUtOh6veg10+OA9EXRpKBeGWZzP4RMNAsQh9/zw3hb2gQ==",
+      "type": "package",
+      "path": "sautinsoft.exceltopdf/5.1.5.22",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/SautinSoft.ExcelToPdf.dll",
+        "lib/net40/SautinSoft.ExcelToPdf.xml",
+        "lib/net45/SautinSoft.ExcelToPdf.dll",
+        "lib/net45/SautinSoft.ExcelToPdf.xml",
+        "lib/net461/SautinSoft.ExcelToPdf.dll",
+        "lib/net461/SautinSoft.ExcelToPdf.xml",
+        "lib/netcoreapp2.0/SautinSoft.ExcelToPdf.deps.json",
+        "lib/netcoreapp2.0/SautinSoft.ExcelToPdf.dll",
+        "lib/netcoreapp2.0/SautinSoft.ExcelToPdf.xml",
+        "sautinsoft.exceltopdf.5.1.5.22.nupkg.sha512",
+        "sautinsoft.exceltopdf.nuspec"
       ]
     },
     "SharpZipLib/1.0.0": {
@@ -1145,29 +1195,36 @@
   "projectFileDependencyGroups": {
     "": [],
     ".NETFramework,Version=v4.6.1": [
+      "ExceltoPDFConversionActivities >= 1.1.6 <= 1.1.6",
       "Microsoft.Activities >= 1.0.1 <= 1.0.1",
       "RaiseWindow >= 1.0.1 <= 1.0.1",
       "UiPath.Database.Activities >= 1.2.6863.32528 <= 1.2.6863.32528",
       "UiPath.Excel.Activities >= 2.6.0 <= 2.6.0",
       "UiPath.Mail.Activities >= 1.5.0 <= 1.5.0",
       "UiPath.System.Activities >= 19.5.0 <= 19.5.0",
-      "UiPath.UIAutomation.Activities >= 19.5.0 <= 19.5.0"
+      "UiPath.UIAutomation.Activities >= 19.5.0 <= 19.5.0",
+      "sautinsoft.exceltopdf >= 5.1.5.22 <= 5.1.5.22"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aditi.mishra\\.nuget\\packages\\": {}
+    "C:\\Users\\vinay.jadhav\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "StartJobActivity",
       "projectName": "StartJobActivity",
-      "projectPath": "C:\\Users\\aditi.mishra\\Documents\\UiPath\\rpa_orch_schedular\\.local",
-      "packagesPath": "C:\\Users\\aditi.mishra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aditi.mishra\\Documents\\UiPath\\rpa_orch_schedular\\.local"
+      "projectPath": "C:\\Users\\vinay.jadhav\\Documents\\UiPath\\rpa_orch_schedular\\.local",
+      "packagesPath": "C:\\Users\\vinay.jadhav\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\vinay.jadhav\\Documents\\UiPath\\rpa_orch_schedular\\.local"
     },
     "frameworks": {
       "net461": {
         "dependencies": {
+          "ExceltoPDFConversionActivities": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[1.1.6, 1.1.6]"
+          },
           "Microsoft.Activities": {
             "include": "Runtime",
             "target": "Package",
@@ -1202,25 +1259,14 @@
             "include": "Runtime",
             "target": "Package",
             "version": "[19.5.0, 19.5.0]"
+          },
+          "sautinsoft.exceltopdf": {
+            "include": "Runtime",
+            "target": "Package",
+            "version": "[5.1.5.22, 5.1.5.22]"
           }
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'RaiseWindow 1.0.1' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
-      "libraryId": "RaiseWindow"
-    },
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'jQuery 2.1.0' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
-      "libraryId": "jQuery"
-    }
-  ]
+  }
 }
